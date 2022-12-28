@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "discord.js": "^14.7.1",
     "mineflayer": "github:rtm516/mineflayer",
     "mineflayer-pathfinder": "^2.4.1"
   }

@@ -17,7 +17,7 @@ let createBot = () => {
         physicsEnabled: true
     });
 
-    process.on('uncaughtException', () => { 
+    process.on('uncaughtException', () => {
         bot.isFarming = false;
     })
 
@@ -74,10 +74,7 @@ let createBot = () => {
         process.exit()
     })
     bot.on("end", () => {
-        setTimeout(() => {
-            createBot();
-        }, 10000);
+        createBot();
     });
 }
-
 createBot();

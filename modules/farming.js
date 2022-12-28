@@ -59,7 +59,7 @@ module.exports = bot => {
             }
             for (let ent in bot.entities) {
                 let entity = bot.entities[ent];
-                if (entity.name == "item" && entity.onGround && entity.metadata[entity.metadata.length - 1]?.itemId && goSearchItem.includes(mcData.items[entity.metadata[entity.metadata.length - 1].itemId].name)) {
+                if (entity.name == "item" && entity.position.distanceTo(bot.entity.position) < 20 && entity.onGround && entity.metadata[entity.metadata.length - 1]?.itemId && goSearchItem.includes(mcData.items[entity.metadata[entity.metadata.length - 1].itemId].name)) {
                     await bot.pathfinder.goto(new GoalGetToBlock(entity.position.x, entity.position.y, entity.position.z)).catch(console.error);
                     let pos = entity.position.clone();
                     pos.y = bot.entity.position.y
